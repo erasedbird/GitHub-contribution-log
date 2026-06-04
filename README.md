@@ -1,15 +1,15 @@
-# Contribution [#]: [Issue Title]
+# Contribution 204: Add compatibility test for $bitOr (second pass)
 
-**Contribution Number:** [1 / 2 / 3]  
-**Student:** [Your Name]  
-**Issue:** [GitHub issue link]  
-**Status:** [Phase I / Phase II / Phase III / Phase IV] [In Progress / Complete]
+**Contribution Number:** 1 
+**Student:** Ruth L
+**Issue:** [GitHub issue link](https://github.com/documentdb/functional-tests/issues/204)
+**Status:** Phase 1 (In Progress)
 
 ---
 
 ## Why I Chose This Issue
 
-[1-2 paragraphs explaining why this issue interests you, how it matches your skills/learning goals, what you hope to learn]
+One area I want to improve on is better understanding how to write good tests. I've oven written code to pass tests, but I'm not as good as writing thorough test cases. DocumentDB functional-tests seems like a pretty good place to start because they have a lot of structured tests and resources I can consult while working on writing my own, and logical operators are a good place to start since they're pretty simple.
 
 ---
 
