@@ -17,19 +17,19 @@ One area I want to improve on is better understanding how to write good tests. I
 
 ### Problem Description
 
-[In your own words, what's broken or missing?]
+BitOr tests are missing.
 
 ### Expected Behavior
 
-[What should happen?]
+Should test BitOr, which performs a bitwise or update on a field. 
 
 ### Current Behavior
 
-[What actually happens?]
+No bitor test exists.
 
 ### Affected Components
 
-[Which parts of the codebase are involved?]
+BitOr command cannot be tested.
 
 ---
 
@@ -37,19 +37,48 @@ One area I want to improve on is better understanding how to write good tests. I
 
 ### Environment Setup
 
-[Notes on setting up your local development environment - challenges you faced, how you solved them]
+Setup instructions from DocumentDB:
+
+`pip install pymongo`
+`pip install dnspython`
+
+```
+   # Remove any existing DocumentDB image
+   docker image rm -f ghcr.io/documentdb/documentdb/documentdb-local:latest || echo "No existing documentdb image to remove"
+
+   # Pull the latest DocumentDB Docker image
+   docker pull ghcr.io/documentdb/documentdb/documentdb-local:latest
+
+   # Tag the image for convenience
+   docker tag ghcr.io/documentdb/documentdb/documentdb-local:latest documentdb
+
+   # Run the container, setting a username and password
+   docker run -dt -p 10260:10260 --name documentdb-container documentdb --username <YOUR_USERNAME> --password <YOUR_PASSWORD>
+```
+
+Save the name and password chosen.
+
+Setup instructions for functional-tests: 
+```
+# Clone the repository
+git clone https://github.com/documentdb/functional-tests.git
+cd functional-tests
+
+# Install dependencies
+pip install -r requirements.txt
+```
 
 ### Steps to Reproduce
 
-1. [Step 1]
-2. [Step 2]
-3. [Observed result]
+Note: Key challenge was that to run pytest, I had to cd into documentdb-tests for it to work, which is not written in the repo.
+
+1. `cd documentdb-tests`
+2. `pytest --connection-string "mongodb://hello:there@localhost:10260/?authMechanism=SCRAM-SHA-256&tls=true&tlsAllowInvalidCertificates=true" --engine-name documentdb` Feel free to add -x to get it to stop after the first error, or -m [string] so it only runs a certain type of test.
+3. Tests do not include BitOr.
 
 ### Reproduction Evidence
 
-- **Commit showing reproduction:** [Link to commit in your fork]
-- **Screenshots/logs:** [If applicable]
-- **My findings:** [What you discovered during reproduction]
+- **Commit showing reproduction:** Test log saved into results.log here: 
 
 ---
 
@@ -57,24 +86,25 @@ One area I want to improve on is better understanding how to write good tests. I
 
 ### Analysis
 
-[Your analysis of the root cause - what's causing the issue?]
+Missing BitOr tests.
 
 ### Proposed Solution
 
-[High-level description of your fix approach]
+Write BitOr tests, with 5 normal cases and 2-3 edge case behaviors.
 
 ### Implementation Plan
 
 Using UMPIRE framework (adapted):
 
-**Understand:** [Restate the problem]
+**Understand:** There is not BitOr tests.
 
-**Match:** [What similar patterns/solutions exist in the codebase?]
+**Match:** Contributions.md links to example tests and test format guide.
 
-**Plan:** [Step-by-step implementation plan]
-1. [Modify file X to do Y]
-2. [Add function Z]
-3. [Update tests]
+**Plan:** 
+1. Read over MongoDB BitOr documentation carefully to understand expected behavior + edge cases.
+2. Read over example tests to understand how to contribute.
+3. Add base tests and check if it works.
+4. Add edge case tests.
 
 **Implement:** [Link to your branch/commits as you work]
 
