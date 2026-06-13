@@ -78,7 +78,7 @@ Note: Key challenge was that to run pytest, I had to cd into documentdb-tests fo
 
 ### Reproduction Evidence
 
-- **Commit showing reproduction:** Test log saved into results.log here: 
+- **Commit showing reproduction:** Test log saved into results.log in this repo.
 
 ---
 
