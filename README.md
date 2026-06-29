@@ -137,17 +137,17 @@ Using UMPIRE framework (adapted):
 
 ## Implementation Notes
 
-### Week [X] Progress
+### Week 4 Progress
 
-[What you built this week, challenges faced, decisions made]
+Decide which tests to include, reach out to the Discord to learn about contribution requirements, read the Contributing.md files.
 
-### Week [Y] Progress
+### Week 5 Progress
 
-[Continue documenting as you work]
+Wrote the first tests, began testing by comparing results to mongosh.
 
 ### Code Changes
 
-- **Files modified:** [List]
+- **Files modified:** Changed bitOr folder in bitwise operators folder.
 - **Key commits:** [Links to important commits]
 - **Approach decisions:** [Why you chose certain approaches]
 
